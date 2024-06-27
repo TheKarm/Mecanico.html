@@ -1,0 +1,50 @@
+{% extends 'core/administrador/base.html' %}
+{% load static %}
+{% block contenido %}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row ">
+            <div class="col-12 grid-margin">
+                <div class="card">  
+                    <div class="card-body">
+                        <a href="{% url 'mecanicos' %}">
+                            <div class="badge badge-pill badge-outline-secondary">ATRÁS</div>
+                        </a>          
+                        <h2 class="card-title text-center text-muted">Detalle Mecánico</h2>
+                        <div class="table-responsive">
+                            <!-- Responsive Table Start -->
+                            <div class="container-fluid pt-4 px-4">
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <div class="bg-secondary rounded h-100 p-4">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">ID: {{ mecanico.id }}</th>
+                                                            <td class="text-dark">RUT: {{ mecanico.rut }}</td>
+                                                            <td class="text-dark">NOMBRE: {{ mecanico.nombre }}</td>
+                                                            <td class="text-dark">APELLIDO: {{ mecanico.apellido }}</td>
+                                                            <td class="text-dark">HABILITADO: {{ mecanico.habilitado }}</td>
+                                                            <td class="text-dark">TIPO: {{ mecanico.tipo.descripcion }}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Responsive Table End -->
+                        </div>                      
+                    </div>                   
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <!--AQUI SE PODRIA AGREGAR EL ENDFOR PARA QUE QUEDE UNA CAJA PARA CADA MECÁNICO-->
+    </div>
+</div>
+
+{% endblock %}

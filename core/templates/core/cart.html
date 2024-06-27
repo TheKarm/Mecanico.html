@@ -1,0 +1,182 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+        <h1 class="display-3 text-white text-uppercase mb-3 animated slideInDown">Carrito de Compra</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Principal</a></li>
+                <!--<li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>-->
+                <li class="breadcrumb-item text-primary active" aria-current="page">Carrito</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+        <div class="row mb-5">
+            <form class="col-md-12" method="post">
+                <div class="site-blocks-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">Imagen</th>
+                                <th class="product-name">Producto</th>
+                                <th class="product-price">Precio</th>
+                                <th class="product-quantity">Cantidad</th>
+                                <th class="product-total">Total</th>
+                                <th class="product-remove">Descartar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="product-thumbnail">
+                                    <img src="{% static 'core/img/brocha.webp' %}" alt="Image" class="img-fluid" width="70">
+                                </td>
+                                <td class="product-name">
+                                    <h2 class="h5 text-black">Brocha de Pintura</h2>
+                                </td>
+                                <td>CLP$ 3.000</td>
+                                <td>
+                                    <div class="input-group mb-3 d-flex align-items-center quantity-container"
+                                        style="max-width: 120px;">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-black decrease"
+                                                type="button">&minus;</button>
+                                        </div>
+                                        <input type="text" class="form-control text-center quantity-amount" value="1"
+                                            placeholder="" aria-label="Example text with button addon"
+                                            aria-describedby="button-addon1">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td>CLP$ 3.000</td>
+                                <td><button><a href="" class="btn btn-black btn-sm">Eliminar</a></button></td>
+                            </tr>
+
+                            <tr>
+                                <td class="product-thumbnail">
+                                    <img src="{% static 'core/img/taladro.png' %}" alt="Image" class="img-fluid" width="70">
+                                </td>
+                                <td class="product-name">
+                                    <h2 class="h5 text-black">Taladro Inalámbrico</h2>
+                                </td>
+                                <td>CLP$ 42.990</td>
+                                <td>
+                                    <div class="input-group mb-3 d-flex align-items-center quantity-container"
+                                        style="max-width: 120px;">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-black decrease"
+                                                type="button">&minus;</button>
+                                        </div>
+                                        <input type="text" class="form-control text-center quantity-amount" value="1"
+                                            placeholder="" aria-label="Example text with button addon"
+                                            aria-describedby="button-addon1">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td>CLP$ 42.990</td>
+                                <td><button><a href="" class="btn btn-black btn-sm">Eliminar</a></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <a href="#"><button class="btn btn-outline-black btn-sm btn-block btn-primary">Seguir
+                                Comprando</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pl-5">
+                <div class="row justify-content-end">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-12 text-right border-bottom mb-5">
+                                <h3 class="text-black h4 text-uppercase">TOTAL DEL CARRITO</h3>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <span class="text-black">Subtotal</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">CLP$ 45.990</strong>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-6">
+                                <span class="text-black">Total</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">CLP$ 45.990</strong>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div style="justify-content: center;" class="text-center" id="paypal-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    paypal.Button.render({
+        // Configure environment
+        env: 'sandbox',
+        client: {
+            sandbox: 'AeYJAgie-sYzw3DHtbxXywAYFWz87EXY0Lw6LWreT3OqAmO3qlVhiQU013nh_mddHJtzDkzjPb67HDq3',
+            production: 'demo_production_client_id'
+        },
+        // Customize button (optional)
+        locale: 'en_US',
+        style: {
+            size: 'large',
+            color: 'black',
+            shape: 'rect',
+        },
+        // Enable Pay Now checkout flow (optional)
+        commit: true,
+        // Set up a payment
+        payment: function (data, actions) {
+            return actions.payment.create({
+                transactions: [{
+                    amount: {
+                        total: '45.90',
+                        currency: 'USD'
+                    }
+                }]
+            });
+        },
+        // Execute the payment
+        onAuthorize: function (data, actions) {
+            return actions.payment.execute().then(function () {
+                // Show a confirmation message to the buyer
+                window.alert('Gracias por tu Compra');
+            });
+        }
+    }, '#paypal-button');
+</script>
+
+
+{% endblock %}

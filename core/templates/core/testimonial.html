@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+<h1 class="text-uppercase text-center mt-5">¡Qué dicen nuestros clientes!</h1>
+<!-- Testimonial Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h2 class="d-inline-block bg-secondary text-primary text-uppercase py-1 px-4">Testimonios</h2>
+            <!--<h1 class="text-uppercase">¡Qué dicen nuestros clientes!</h1>-->
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            <div class="testimonial-item text-center"
+                data-dot="<img class='img-fluid' src='{% static 'core/img/person_4.jpg' %}' alt=''>">
+                <h4 class="text-uppercase">Madeline Herrera</h4>
+                <p class="text-primary text-uppercase">Clienta Satisfecha</p>
+                <span class="fs-5">El servicio en Rayo Makween es excepcional. Siempre saben lo que mi coche
+                    necesita y me lo explican todo claramente.</span>
+            </div>
+            <div class="testimonial-item text-center"
+                data-dot="<img class='img-fluid' src='{% static 'core/img/person_2.jpg' %}' alt=''>">
+                <h4 class="text-uppercase">Jonathan Muñoz</h4>
+                <p class="text-primary text-uppercase">Cliente Satisfecho</p>
+                <span class="fs-5">Confío plenamente en ellos. Han mantenido mi vehículo en perfectas condiciones
+                    durante años.</span>
+            </div>
+            <div class="testimonial-item text-center"
+                data-dot="<img class='img-fluid' src='{% static 'core/img/person_1.jpg' %}' alt=''>">
+                <h4 class="text-uppercase">Eduardo Sanchez</h4>
+                <p class="text-primary text-uppercase">Cliente Satisfecho</p>
+                <span class="fs-5">Excelente servicio al cliente y reparaciones rápidas y efectivas. ¡Altamente
+                    recomendados!</span>
+            </div>
+            <div class="testimonial-item text-center"
+                data-dot="<img class='img-fluid' src='{% static 'core/img/Mecanico6.jpg' %}' alt=''>">
+                <h4 class="text-uppercase">Juan Maestro</h4>
+                <p class="text-primary text-uppercase">Cliente Satisfecho</p>
+                <span class="fs-5">Gracias al Taller Mecánico Rayo Makween y a Jason Tapia por su excelente
+                    servicio. Repararon mi coche rápidamente y con profesionalismo. Estoy muy satisfecho y seguro al
+                    volante. ¡Muy recomendados!</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+{% endblock %}

@@ -1,0 +1,10 @@
+django
+django-admin-interface
+django_crispy_forms
+crispy_bootstrap4
+pillow
+djangorestframework
+django-simple-captcha
+django-recaptcha
+django-multi-captcha-admin
+django-axes

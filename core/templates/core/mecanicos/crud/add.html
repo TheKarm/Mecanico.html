@@ -1,0 +1,36 @@
+{% extends 'core/administrador/base.html' %}
+{% load static %}
+{% block contenido %}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-6 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="{% url 'mecanicos' %}">
+                            <div class="badge badge-pill badge-outline-secondary">ATRÁS</div>
+                        </a>
+                        <h2 class="card-title text-center text-muted">Añadir mecánicos</h2>
+                        <br>
+                        {% load crispy_forms_tags %}
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <table>
+                                {{ form | crispy }}
+                            </table>
+                            <br>
+
+                            <input class="btn btn-danger" type="reset" value="Limpiar">
+                            <input class="btn btn-success" type="submit" value="Guardar">
+                            <!--<a href=""><div class="badge badge-outline-danger">Limpiar</div></a>
+                            <a href=""><div class="badge badge-outline-success">Guardar</div></a>-->
+
+                        </form>
+                        {{ msj }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

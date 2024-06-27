@@ -1,0 +1,143 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+        <h1 class="display-3 text-white text-uppercase mb-3 animated slideInDown">Sobre Nosotros</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Principal</a></li>
+                <!--<li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>-->
+                <li class="breadcrumb-item text-primary active" aria-current="page">Sobre Nosotros</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="d-flex flex-column">
+                    <img class="img-fluid w-75 align-self-end" src="{% static 'core/img/sobre-nosotros.webp' %}" alt="">
+                    <div class="w-50 bg-secondary p-5" style="margin-top: -25%;">
+                        <h1 class="text-uppercase text-primary mb-3">25 Years</h1>
+                        <h2 class="text-uppercase mb-0">Experience</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <p class="d-inline-block bg-secondary text-primary py-1 px-4">Sobre Nosotros</p>
+                <h1 class="text-uppercase mb-4">MÁS QUE UN ARREGLO DE VEHICULO. ¡APRENDA MÁS ACERCA DE NOSOTROS!</h1>
+                <p>¿Quiénes somos?.
+                    En Rayo Makween, no solo reparamos vehículos; transformamos la experiencia de
+                    mantenimiento automotriz. Nuestro equipo está compuesto por técnicos certificados y apasionados por
+                    los automóviles, que se mantienen al día con las últimas tecnologías y tendencias de la industria
+                    para garantizar que su vehículo reciba el mejor cuidado posible.</p>
+                <p class="mb-4">Nuestra Filosofía.
+                    Creemos que cada cliente merece un servicio personalizado y transparente. Nos enorgullece construir
+                    relaciones duraderas basadas en la confianza y la satisfacción. Desde el momento en que ingresa a
+                    nuestras instalaciones, se sentirá como en casa, sabiendo que su vehículo está en las mejores manos.</p>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h3 class="text-uppercase mb-3">Desde 2024</h3>
+                        <p class="mb-0">Hemos inaugurado nuestro taller mecánico desde inicio de este año, y todos loa
+                            clientes que han pasado por nuestro taller han quedados satisfechos.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="text-uppercase mb-3">Más de 1000 clientes</h3>
+                        <p class="mb-0">Hemos tenido mas de 1000 clientes y la mayoria ha terminado satisfecha con
+                            nuestro servicio de arreglo y revision hacia su vehiculo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Team Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <p class="d-inline-block bg-secondary text-primary py-1 px-4">Nuestros Mecánicos</p>
+            <h1 class="text-uppercase">Conozca a nuestro equipo</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid" src="{% static 'core/img/mecanico1.jpg' %}" alt="">
+                        <div class="team-social">
+                            <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-secondary text-center p-4">
+                        <h5 class="text-uppercase">Alan Gajardo</h5>
+                        <span class="text-primary">Designation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid" src="{% static 'core/img/mecanico2.avif' %}" alt="">
+                        <div class="team-social">
+                            <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-secondary text-center p-4">
+                        <h5 class="text-uppercase">Daniel Sepulveda</h5>
+                        <span class="text-primary">Designation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid" src="{% static 'core/img/mecanico3.avif' %}" alt="">
+                        <div class="team-social">
+                            <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-secondary text-center p-4">
+                        <h5 class="text-uppercase">Jonathan Dos Santos</h5>
+                        <span class="text-primary">Designation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid" src="{% static 'core/img/mecanico4.avif' %}" alt="">
+                        <div class="team-social">
+                            <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-secondary text-center p-4">
+                        <h5 class="text-uppercase">Mauro Gonzalez</h5>
+                        <span class="text-primary">Designation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+{% endblock %}
