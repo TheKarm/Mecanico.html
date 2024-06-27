@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from datetime import timedelta
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader  
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +30,7 @@ SECRET_KEY = 'django-insecure-kwa6(qfog$_6-wp!!a2s712066l2w4^hi651i!@08x@dt$d8zd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
 
 
 # Application definition
@@ -49,6 +52,8 @@ INSTALLED_APPS = [
     'captcha',
     'django_recaptcha',
     'axes',
+    'cloudinary',
+
 ]
 #--------------------------CONFIGURACION AXES-----------------------
 AUTHENTICATION_BACKENDS = [
@@ -76,6 +81,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -109,10 +115,20 @@ WSGI_APPLICATION = 'Administrador.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}"""
+DATABASES = {
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'aws-0-sa-east-1.pooler.supabase.com',
+        'NAME': 'postgres',
+        'USER': 'postgres.ftycavxkpjqyuyoffpqt',
+        'PASSWORD': 'mamaestapresa',
+        'POST': '6543',
     }
 }
 
@@ -152,6 +168,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+#python manage.py collectstatic --upload-unhashed-files
+
+#CONFIG DE CLOUDINARY
+cloudinary.config (
+    cloud_name = 'dbcv9znsk',
+    api_key = '595266799124395',
+    api_secret = 'iIFFv5_TkFGqS0JvZGtpdAlbwmw'
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

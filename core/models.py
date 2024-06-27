@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Genero(models.Model):
@@ -24,7 +25,7 @@ class Mecanico(models.Model):
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
     tipo = models.ForeignKey(TipoMecanico, on_delete=models.CASCADE)
     fecha_ingreso = models.DateTimeField(auto_now_add=True)
-    imagen = models.ImageField(upload_to="mecanicos", null=True, blank=True)
+    imagen = CloudinaryField('imagen')
 
     def __str__(self):
         return self.rut

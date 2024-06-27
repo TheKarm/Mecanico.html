@@ -1,0 +1,11 @@
+{
+    "builds": [{
+        "scr": "Administrador/wsgi.py",
+        "use": "@vercel/python",
+        "config" : { "maxLambdaSize":"15mb","runtime": "python3.9" }
+    }],
+    "rountes":[{
+        "src": "/(.*)",
+        "dest": "Administrador/wsgi.py"
+    }]
+}

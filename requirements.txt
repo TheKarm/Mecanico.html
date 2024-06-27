@@ -3,8 +3,11 @@ django-admin-interface
 django_crispy_forms
 crispy_bootstrap4
 pillow
+psycopg2-binary
 djangorestframework
 django-simple-captcha
 django-recaptcha
 django-multi-captcha-admin
 django-axes
+cloudinary
+whitenoise
